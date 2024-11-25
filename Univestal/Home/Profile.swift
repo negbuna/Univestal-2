@@ -7,21 +7,14 @@
 
 import SwiftUI
 
+// Issue: after pfp is changed, goes back to hub and not profile section
 struct UVProfileView: View {
-    
-    @AppStorage("username") var currentUsername: String?
-    @AppStorage("joindate") var storedJoinDateString: String?
+    @ObservedObject var appData: AppData
     
     @State var isEditable: Bool = true
     @State var image: UIImage?
     @State private var isProfileUpdated = false
     @State private var showImagePicker = false
-    
-    func formattedCurrentYear() -> String {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "yyyy" // Year format (yyyy for full year)
-      return dateFormatter.string(from: Date.now)
-    }
     
     var body: some View {
         NavigationStack {
@@ -34,64 +27,77 @@ struct UVProfileView: View {
                         
                         if let image = image {
                             Image(uiImage: image)
-                              .resizable()
-                              .scaledToFit()
-                              .frame(width: 200, height: 200)
-                              .clipShape(Circle())
-                              .shadow(color: Color.primary.opacity(0.5), radius: 15)
-                          } else {
-                            Circle()
-                              .fill(Color.secondary.opacity(0.5))
-                              .frame(width: 200, height: 200)
-                              .overlay {
-                                  Image(systemName: "person.fill")
-                                      .resizable()
-                                      .clipShape(Circle())
-                                      .foregroundStyle(.tertiary)
-                                      .frame(width: 140, height: 140)
-                                      .offset(x: 0, y: 20)
-                              }
-                              .onTapGesture {
-                                self.showImagePicker = true
-                              }
-                          }
-                        
-                        if isEditable {
-                            Text(currentUsername ?? "Univestal User")
-                                .font(.title)
-                                .fontWeight(.semibold)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 200, height: 200)
+                                .clipShape(Circle())
+                                .shadow(color: Color.primary.opacity(0.5), radius: 15)
+                                .onTapGesture {
+                                    self.showImagePicker = true
+                                }
+                        } else {
+                            defaultProfile
+                                .onTapGesture {
+                                    self.showImagePicker = true
+                                }
                         }
                         
-                        Text("Member since \(storedJoinDateString ?? formattedCurrentYear())")
+                        if isEditable {
+                            if !appData.currentUsername.isEmpty {
+                                Text(appData.currentUsername)
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                            } else { // This is just for previews
+                                Text("User")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                            }
+                        }
                         
+                        Text("Member since \(appData.storedJoinDateString ?? appData.formattedCurrentYear())") // Also just for previews
                         
                         Spacer()
-                       
-                        
-                    } // end hstack for pfp and username
+                    }
                     .padding()
                     
                     Divider()
                     
-                    
-                    
                     Spacer()
                 }
-                
             }
             .navigationTitle("Profile")
             .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: UVSettingsView()) {
-                            Image(systemName: "gearshape.fill")
-                        
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: UVSettingsView(appData: appData)) {
+                        Image(systemName: "gearshape.fill")
                     }
                 }
+            }
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(selectedImage: $image)
             }
         }
     }
 }
 
 #Preview {
-    UVProfileView()
+    UVProfileView(appData: AppData())
+}
+
+extension UVProfileView {
+    private var defaultProfile: some View {
+        ZStack {
+            Circle()
+              .fill(Color.secondary.opacity(0.5))
+              .frame(width: 200, height: 200)
+              .overlay {
+                  Image(systemName: "person.fill")
+                      .resizable()
+                      .clipShape(RoundedRectangle(cornerRadius: 47))
+                      .foregroundStyle(.tertiary)
+                      .frame(width: 140, height: 140)
+                      .offset(x: 0, y: 20)
+              }
+        }
+    }
 }

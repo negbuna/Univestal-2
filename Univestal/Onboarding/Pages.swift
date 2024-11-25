@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct PageViews: View {
-    @ObservedObject var appData = AppData()
+    @ObservedObject var appData: AppData
     
     @State var showPrimary: Bool = false
     @State var showContinue: Bool = false
     
-    var uvf: UVFunctions {
-        UVFunctions(appData: appData)
-    }
-    
     var obb: UVButtons {
-        UVButtons(appData: appData, uvf: uvf)
+        UVButtons(appData: appData)
     }
     
     private var welcomeSec: some View {
@@ -67,11 +63,15 @@ struct PageViews: View {
                             appData.name = String(appData.name.prefix(16))
                         }
                         
-                        appData.isButtonDisabled = !uvf.validateUsername() || appData.name.count < 3 || appData.name.count > 16
+                        appData.isButtonDisabled = !appData.validateUsername() || appData.name.count < 3 || appData.name.count > 16
                     }
                 
                 if appData.name.count < 3 && !appData.name.isEmpty {
                     Text("Username must be at least 3 characters.")
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                } else if appData.name.count <= 3 && appData.isUsernameTaken(appData.name) {
+                    Text("Username is unavailable.")
                         .font(.caption)
                         .foregroundStyle(.red)
                 }
@@ -84,14 +84,7 @@ struct PageViews: View {
                     showContinue = true
                 }
             }
-            .overlay(alignment: .topLeading) {
-                Image(systemName: "globe")
-                    .foregroundStyle(.primary)
-                    .opacity(0.07)
-                    .font(.system(size: 800))
-                    .offset(x: 20, y: 2)
-                    .ignoresSafeArea()
-            }
+            .globeOverlay()
         }
     }
 
@@ -116,14 +109,7 @@ struct PageViews: View {
             }
         }
         .padding()
-        .overlay(alignment: .topLeading) {
-            Image(systemName: "globe")
-                .foregroundStyle(.primary)
-                .opacity(0.07)
-                .font(.system(size: 800))
-                .offset(x: 20, y: 2)
-                .ignoresSafeArea()
-        }
+        .globeOverlay()
     }
 
     private var loginSec: some View {
@@ -136,25 +122,16 @@ struct PageViews: View {
                 .font(.headline)
             SecureField("Password", text: $appData.password)
                 .font(.headline)
-            if !appData.name.isEmpty && !uvf.isUsernameTaken(appData.name) {
-                Text("Username does not exist.")
-                    .font(.caption)
-                    .foregroundStyle(.red)
-            } else if !appData.password.isEmpty && !uvf.isPasswordCorrect(name: appData.name, password: appData.password) {
-                Text("Incorrect username or password.")
-                    .font(.caption)
-                    .foregroundStyle(.red)
+            if appData.hasAttemptedLogin {
+                if !appData.name.isEmpty && !appData.isUsernameTaken(appData.name) || (!appData.password.isEmpty && !appData.isPasswordCorrect(username: appData.name, password: appData.password)) {
+                    Text("Incorrect username and/or password.")
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                }
             }
         }
         .padding()
-        .overlay(alignment: .topLeading) {
-            Image(systemName: "globe")
-                .foregroundStyle(.primary)
-                .opacity(0.07)
-                .font(.system(size: 800))
-                .offset(x: 20, y: 2)
-                .ignoresSafeArea()
-        }
+        .globeOverlay()
     }
     
     // Page switches based on onboardingState
@@ -191,4 +168,26 @@ struct PageViews: View {
 
 #Preview {
     PageViews(appData: AppData())
+}
+
+// Trying overlay as a var in a differet way
+
+struct GlobeOverlay: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay(alignment: .topLeading) {
+                Image(systemName: "globe")
+                    .foregroundStyle(.primary)
+                    .opacity(0.07)
+                    .font(.system(size: 800))
+                    .offset(x: 20, y: 2)
+                    .ignoresSafeArea()
+            }
+    }
+}
+
+extension View {
+    func globeOverlay() -> some View {
+        self.modifier(GlobeOverlay())
+    }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UVHubView: View {
+    @ObservedObject var appData: AppData
     
     var body: some View {
         
@@ -61,7 +62,7 @@ struct UVHubView: View {
             .navigationTitle("Hub")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: UVSettingsView()) {
+                    NavigationLink(destination: UVSettingsView(appData: appData)) {
                                 Image(systemName: "gearshape.fill")
                             }
                 }
@@ -74,6 +75,6 @@ struct UVHubView_Previews: PreviewProvider {
     @State static private var currentPage = 0 // Example state for preview
     
     static var previews: some View {
-        UVHubView()
+        UVHubView(appData: AppData())
     }
 }

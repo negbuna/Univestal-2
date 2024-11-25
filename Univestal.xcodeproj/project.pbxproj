@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E11F64A2CE28AF3000E6DB9 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F6492CE28AEC000E6DB9 /* Functions.swift */; };
 		5E11F64C2CE28AFA000E6DB9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F64B2CE28AF8000E6DB9 /* Buttons.swift */; };
 		5E11F64E2CE2D1F9000E6DB9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E11F64D2CE2D1F1000E6DB9 /* .gitignore */; };
 		5E11F6502CE2DA6A000E6DB9 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F64F2CE2DA68000E6DB9 /* Pages.swift */; };
 		5E11F6522CE673CE000E6DB9 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F6512CE673CB000E6DB9 /* AppData.swift */; };
+		5E11F65F2CF470F2000E6DB9 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F65E2CF47093000E6DB9 /* PrivacyPolicy.swift */; };
+		5E11F6612CF47127000E6DB9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F6602CF47127000E6DB9 /* Review.swift */; };
+		5E11F6652CF47328000E6DB9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F6642CF47328000E6DB9 /* ImagePicker.swift */; };
 		5E1242DF2C221BFA0042B089 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1242DE2C221BFA0042B089 /* App.swift */; };
 		5E1242E12C221BFA0042B089 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1242E02C221BFA0042B089 /* ContentView.swift */; };
 		5E1242E32C221BFA0042B089 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1242E22C221BFA0042B089 /* Item.swift */; };
@@ -31,8 +33,7 @@
 		5E9AD4562C421A3900C55741 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD44F2C41A53E00C55741 /* Config.swift */; };
 		5EA1CDE42C3AF1DD00CE5AAA /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */; };
 		5EA1CDE62C3AFD4C00CE5AAA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1CDE52C3AFD4C00CE5AAA /* Settings.swift */; };
-		5EE8078B2C38D2730070D8E9 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078A2C38D2730070D8E9 /* Onboarding.swift */; };
-		5EE8078D2C39F4B90070D8E9 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078C2C39F4B90070D8E9 /* Intro.swift */; };
+		5EE8078D2C39F4B90070D8E9 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078C2C39F4B90070D8E9 /* Stage.swift */; };
 		5EE8078F2C3A200A0070D8E9 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078E2C3A200A0070D8E9 /* Homepage.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5E11F6492CE28AEC000E6DB9 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		5E11F64B2CE28AF8000E6DB9 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		5E11F64D2CE2D1F1000E6DB9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5E11F64F2CE2DA68000E6DB9 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		5E11F6512CE673CB000E6DB9 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		5E11F65E2CF47093000E6DB9 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		5E11F6602CF47127000E6DB9 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		5E11F6642CF47328000E6DB9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5E1242DB2C221BFA0042B089 /* Univestal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Univestal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1242DE2C221BFA0042B089 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5E1242E02C221BFA0042B089 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,8 +80,7 @@
 		5E9AD44F2C41A53E00C55741 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
 		5EA1CDE52C3AFD4C00CE5AAA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		5EE8078A2C38D2730070D8E9 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		5EE8078C2C39F4B90070D8E9 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		5EE8078C2C39F4B90070D8E9 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		5EE8078E2C3A200A0070D8E9 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +116,6 @@
 				5E1242F02C221BFC0042B089 /* UnivestalTests */,
 				5E1242FA2C221BFC0042B089 /* UnivestalUITests */,
 				5E1242DC2C221BFA0042B089 /* Products */,
-				CA69E66F20C31690C294A399 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,8 +178,11 @@
 				5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */,
 				5EA1CDE52C3AFD4C00CE5AAA /* Settings.swift */,
 				5E9AD4472C3C993100C55741 /* Profile.swift */,
+				5E11F6642CF47328000E6DB9 /* ImagePicker.swift */,
 				5E9AD4492C407F7B00C55741 /* NetworkManager.swift */,
 				5E9AD44B2C4095CD00C55741 /* NetworkManagerView.swift */,
+				5E11F65E2CF47093000E6DB9 /* PrivacyPolicy.swift */,
+				5E11F6602CF47127000E6DB9 /* Review.swift */,
 				5E9AD44F2C41A53E00C55741 /* Config.swift */,
 			);
 			path = Home;
@@ -187,20 +191,11 @@
 		5EE807892C38D2500070D8E9 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				5EE8078C2C39F4B90070D8E9 /* Intro.swift */,
-				5EE8078A2C38D2730070D8E9 /* Onboarding.swift */,
+				5EE8078C2C39F4B90070D8E9 /* Stage.swift */,
 				5E11F64F2CE2DA68000E6DB9 /* Pages.swift */,
-				5E11F6492CE28AEC000E6DB9 /* Functions.swift */,
 				5E11F64B2CE28AF8000E6DB9 /* Buttons.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		CA69E66F20C31690C294A399 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,16 +335,17 @@
 				5EE8078F2C3A200A0070D8E9 /* Homepage.swift in Sources */,
 				5E1242E12C221BFA0042B089 /* ContentView.swift in Sources */,
 				5E9AD44A2C407F7B00C55741 /* NetworkManager.swift in Sources */,
+				5E11F6652CF47328000E6DB9 /* ImagePicker.swift in Sources */,
 				5E11F6522CE673CE000E6DB9 /* AppData.swift in Sources */,
 				5E1242E32C221BFA0042B089 /* Item.swift in Sources */,
 				5EA1CDE42C3AF1DD00CE5AAA /* Hub.swift in Sources */,
-				5E11F64A2CE28AF3000E6DB9 /* Functions.swift in Sources */,
+				5E11F65F2CF470F2000E6DB9 /* PrivacyPolicy.swift in Sources */,
 				5E9AD4522C41E01700C55741 /* Config.swift in Sources */,
 				5E11F64C2CE28AFA000E6DB9 /* Buttons.swift in Sources */,
+				5E11F6612CF47127000E6DB9 /* Review.swift in Sources */,
 				5E9AD44C2C4095CD00C55741 /* NetworkManagerView.swift in Sources */,
 				5E9AD4482C3C993100C55741 /* Profile.swift in Sources */,
-				5EE8078B2C38D2730070D8E9 /* Onboarding.swift in Sources */,
-				5EE8078D2C39F4B90070D8E9 /* Intro.swift in Sources */,
+				5EE8078D2C39F4B90070D8E9 /* Stage.swift in Sources */,
 				5E11F6502CE2DA6A000E6DB9 /* Pages.swift in Sources */,
 				5EA1CDE62C3AFD4C00CE5AAA /* Settings.swift in Sources */,
 				5E1242DF2C221BFA0042B089 /* App.swift in Sources */,

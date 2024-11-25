@@ -10,19 +10,10 @@ import SwiftData
 
 @main
 struct UnivestalApp: App {
-    @StateObject var appData = AppData()
-    
-    // Defers the initialization until appData is ready
-    lazy var uvf: UVFunctions = {
-        let functions = UVFunctions(appData: appData)
-        functions.refreshUserSet() // Initialize the set with the stored data
-        return functions
-    }()
+    @StateObject var appData = AppData() // Initialization for AppData
     
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+        let schema = Schema([Item.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
@@ -34,8 +25,7 @@ struct UnivestalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            UVIntroView()
-                .environmentObject(appData)
+            Stage(appData: appData) // Pass to Stage
         }
         .modelContainer(sharedModelContainer)
     }

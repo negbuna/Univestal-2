@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomepageView: View {
-    
-    @StateObject var appData: AppData
+    @ObservedObject var appData: AppData
     
     @State private var isAnimating: Bool = false
     @State private var appState: Int = 0
@@ -37,15 +36,11 @@ struct HomepageView: View {
 }
 
 #Preview {
-    HomepageView(appData: AppData()) // Create a new AppData instance for preview
-        .environmentObject(AppData()) // Inject AppData environment object
+    HomepageView(appData: AppData())
 }
 
-
 extension HomepageView {
-    
     private var welcomeSec2: some View {
-        
         GeometryReader { geometry in
             VStack {
                 Text("Welcome")
@@ -69,14 +64,13 @@ extension HomepageView {
                         appState = 1
                     }
                 }
-                
             }
         }
     }
     
     private var homepage: some View {
         TabView(selection: $lastPage) {
-            UVHubView()
+            UVHubView(appData: appData)
                 .tabItem {
                     Label("Hub", systemImage: "globe")
                         .tag(0)
@@ -96,13 +90,13 @@ extension HomepageView {
                     Label("Trade", systemImage: "chart.line.uptrend.xyaxis")
                         .tag(3)
                 }
-            UVProfileView()
+            UVProfileView(appData: appData)
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label("Me", systemImage: "person")
                         .tag(4)
                 }
         }
         .tabViewStyle(DefaultTabViewStyle())
+        .edgesIgnoringSafeArea(.bottom)
     }
-
 }
