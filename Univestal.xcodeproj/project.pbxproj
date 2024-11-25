@@ -23,8 +23,8 @@
 		5E1242FC2C221BFC0042B089 /* UnivestalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1242FB2C221BFC0042B089 /* UnivestalUITests.swift */; };
 		5E1242FE2C221BFC0042B089 /* UnivestalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1242FD2C221BFC0042B089 /* UnivestalUITestsLaunchTests.swift */; };
 		5E9AD4482C3C993100C55741 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD4472C3C993100C55741 /* Profile.swift */; };
-		5E9AD44A2C407F7B00C55741 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD4492C407F7B00C55741 /* NetworkManager.swift */; };
-		5E9AD44C2C4095CD00C55741 /* NetworkManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD44B2C4095CD00C55741 /* NetworkManagerView.swift */; };
+		5E9AD44A2C407F7B00C55741 /* Alpaca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD4492C407F7B00C55741 /* Alpaca.swift */; };
+		5E9AD44C2C4095CD00C55741 /* AlpacaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD44B2C4095CD00C55741 /* AlpacaModel.swift */; };
 		5E9AD44E2C41A46A00C55741 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E9AD44D2C41A46A00C55741 /* Config.plist */; };
 		5E9AD4522C41E01700C55741 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AD44F2C41A53E00C55741 /* Config.swift */; };
 		5E9AD4532C421A3500C55741 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E9AD44D2C41A46A00C55741 /* Config.plist */; };
@@ -74,8 +74,8 @@
 		5E1242FB2C221BFC0042B089 /* UnivestalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivestalUITests.swift; sourceTree = "<group>"; };
 		5E1242FD2C221BFC0042B089 /* UnivestalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivestalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E9AD4472C3C993100C55741 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		5E9AD4492C407F7B00C55741 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		5E9AD44B2C4095CD00C55741 /* NetworkManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerView.swift; sourceTree = "<group>"; };
+		5E9AD4492C407F7B00C55741 /* Alpaca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alpaca.swift; sourceTree = "<group>"; };
+		5E9AD44B2C4095CD00C55741 /* AlpacaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlpacaModel.swift; sourceTree = "<group>"; };
 		5E9AD44D2C41A46A00C55741 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		5E9AD44F2C41A53E00C55741 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
@@ -109,6 +109,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E11F6662CF477A1000E6DB9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5E9AD4492C407F7B00C55741 /* Alpaca.swift */,
+				5E9AD44B2C4095CD00C55741 /* AlpacaModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5E11F6672CF47807000E6DB9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5EA1CDE52C3AFD4C00CE5AAA /* Settings.swift */,
+				5E9AD4472C3C993100C55741 /* Profile.swift */,
+				5E11F6642CF47328000E6DB9 /* ImagePicker.swift */,
+				5E11F65E2CF47093000E6DB9 /* PrivacyPolicy.swift */,
+				5E11F6602CF47127000E6DB9 /* Review.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5E11F6682CF4781A000E6DB9 /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8078E2C3A200A0070D8E9 /* Homepage.swift */,
+				5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */,
+			);
+			path = Hub;
+			sourceTree = "<group>";
+		};
 		5E1242D22C221BFA0042B089 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +168,7 @@
 				5E1242E22C221BFA0042B089 /* Item.swift */,
 				5EE807892C38D2500070D8E9 /* Onboarding */,
 				5EA1CDE22C3AF1AE00CE5AAA /* Home */,
+				5E11F6662CF477A1000E6DB9 /* API */,
 				5E1242E42C221BFC0042B089 /* Assets.xcassets */,
 				5E11F64D2CE2D1F1000E6DB9 /* .gitignore */,
 				5E9AD44D2C41A46A00C55741 /* Config.plist */,
@@ -174,15 +205,8 @@
 		5EA1CDE22C3AF1AE00CE5AAA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5EE8078E2C3A200A0070D8E9 /* Homepage.swift */,
-				5EA1CDE32C3AF1DD00CE5AAA /* Hub.swift */,
-				5EA1CDE52C3AFD4C00CE5AAA /* Settings.swift */,
-				5E9AD4472C3C993100C55741 /* Profile.swift */,
-				5E11F6642CF47328000E6DB9 /* ImagePicker.swift */,
-				5E9AD4492C407F7B00C55741 /* NetworkManager.swift */,
-				5E9AD44B2C4095CD00C55741 /* NetworkManagerView.swift */,
-				5E11F65E2CF47093000E6DB9 /* PrivacyPolicy.swift */,
-				5E11F6602CF47127000E6DB9 /* Review.swift */,
+				5E11F6682CF4781A000E6DB9 /* Hub */,
+				5E11F6672CF47807000E6DB9 /* Settings */,
 				5E9AD44F2C41A53E00C55741 /* Config.swift */,
 			);
 			path = Home;
@@ -334,7 +358,7 @@
 			files = (
 				5EE8078F2C3A200A0070D8E9 /* Homepage.swift in Sources */,
 				5E1242E12C221BFA0042B089 /* ContentView.swift in Sources */,
-				5E9AD44A2C407F7B00C55741 /* NetworkManager.swift in Sources */,
+				5E9AD44A2C407F7B00C55741 /* Alpaca.swift in Sources */,
 				5E11F6652CF47328000E6DB9 /* ImagePicker.swift in Sources */,
 				5E11F6522CE673CE000E6DB9 /* AppData.swift in Sources */,
 				5E1242E32C221BFA0042B089 /* Item.swift in Sources */,
@@ -343,7 +367,7 @@
 				5E9AD4522C41E01700C55741 /* Config.swift in Sources */,
 				5E11F64C2CE28AFA000E6DB9 /* Buttons.swift in Sources */,
 				5E11F6612CF47127000E6DB9 /* Review.swift in Sources */,
-				5E9AD44C2C4095CD00C55741 /* NetworkManagerView.swift in Sources */,
+				5E9AD44C2C4095CD00C55741 /* AlpacaModel.swift in Sources */,
 				5E9AD4482C3C993100C55741 /* Profile.swift in Sources */,
 				5EE8078D2C39F4B90070D8E9 /* Stage.swift in Sources */,
 				5E11F6502CE2DA6A000E6DB9 /* Pages.swift in Sources */,

@@ -63,8 +63,8 @@ struct UVHubView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: UVSettingsView(appData: appData)) {
-                                Image(systemName: "gearshape.fill")
-                            }
+                            Image(systemName: "gearshape.fill")
+                        }
                 }
             }
         }

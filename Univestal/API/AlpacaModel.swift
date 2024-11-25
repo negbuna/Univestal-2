@@ -1,5 +1,5 @@
 //
-//  NetworkManagerView.swift
+//  AlpacaModel.swift
 //  Univestal
 //
 //  Created by Nathan Egbuna on 7/11/24.
