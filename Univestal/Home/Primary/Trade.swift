@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct TradingView: View {
+    @EnvironmentObject var appData: AppData
     @EnvironmentObject var environment: TradingEnvironment
     @State private var showMenu: Bool = false
     @State private var activeAlert: TradeAlertType?
@@ -51,7 +52,7 @@ struct TradingView: View {
                 .navigationTitle("Trading Simulator")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .topBarTrailing) {
                         NavigationLink("History") {
                             PastTrades()
                         }
@@ -158,7 +159,9 @@ struct TradingView: View {
             Spacer()
 
             Button("Confirm") {
-                executeTrade()
+                if !tradedCoin.isEmpty && !tradedQuantity.isEmpty {
+                    executeTrade()
+                }
             }
             .foregroundStyle(.green)
             .bold()
@@ -283,6 +286,7 @@ struct TradingView: View {
 }
 
 struct TradeMenuView: View {
+    @EnvironmentObject var appData: AppData
     @EnvironmentObject var environment: TradingEnvironment
     @Binding var selectedCoin: Coin?
     @Binding var tradedCoin: String
@@ -302,9 +306,11 @@ struct TradeMenuView: View {
         VStack {
             TextField("Enter Coin", text: $tradedCoin)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: UIScreen.relativeWidth(80))
             
             TextField("Quantity", text: $tradedQuantity)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+               .textFieldStyle(RoundedBorderTextFieldStyle())
+               .frame(width: UIScreen.relativeWidth(80))
             
             if !tradedCoin.isEmpty {
                 Picker("Select a Coin", selection: $selectedCoin) {
@@ -337,7 +343,7 @@ struct TradeMenuView: View {
                 }
             }
         }
-        .padding()
+        .padding(UIScreen.relativeWidth(4))
         .onAppear {
             tradedCoin = ""
             tradedQuantity = ""
@@ -347,5 +353,6 @@ struct TradeMenuView: View {
 
 #Preview {
     TradingView()
+        .environmentObject(AppData())
         .environmentObject(TradingEnvironment.shared)
 }

@@ -42,28 +42,26 @@ struct HomepageView: View {
 
 extension HomepageView {
     private var welcomeSec2: some View {
-        GeometryReader { geometry in
-            VStack {
-                Text("Welcome")
-                    .foregroundStyle(.primary)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding()
-                    .offset(y: isAnimating ? 0 : geometry.size.height)
-                    .opacity(isAnimating ? 1 : 0)
-                    .frame(
-                        width: geometry.size.width,
-                        height: geometry.size.height,
-                        alignment: .center)
+        VStack {
+            Text("Welcome")
+                .foregroundStyle(.primary)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding()
+                .offset(y: isAnimating ? 0 : UIScreen.deviceHeight)
+                .opacity(isAnimating ? 1 : 0)
+                .frame(
+                    width: UIScreen.deviceWidth,
+                    height: UIScreen.deviceHeight,
+                    alignment: .center)
+        }
+        .onAppear {
+            withAnimation(.easeOut(duration: 2)) {
+                isAnimating = true
             }
-            .onAppear {
-                withAnimation(.easeOut(duration: 2)) {
-                    isAnimating = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        appState = 1
-                    }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    appState = 1
                 }
             }
         }

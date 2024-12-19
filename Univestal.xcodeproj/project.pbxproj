@@ -52,6 +52,7 @@
 		5EE8078D2C39F4B90070D8E9 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078C2C39F4B90070D8E9 /* Stage.swift */; };
 		5EE8078F2C3A200A0070D8E9 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8078E2C3A200A0070D8E9 /* Homepage.swift */; };
 		5EFA2E7A2D11F71400850417 /* TimeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA2E792D11F71100850417 /* TimeFrame.swift */; };
+		5EFA2E7D2D13739B00850417 /* ScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA2E7B2D13702400850417 /* ScreenData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		5EE8078C2C39F4B90070D8E9 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		5EE8078E2C3A200A0070D8E9 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		5EFA2E792D11F71100850417 /* TimeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrame.swift; sourceTree = "<group>"; };
+		5EFA2E7B2D13702400850417 /* ScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				5E1242DE2C221BFA0042B089 /* App.swift */,
 				5E11F6512CE673CB000E6DB9 /* AppData.swift */,
 				5E7F17EA2D07FE9C00CEA4F7 /* CoreData.swift */,
+				5EFA2E7B2D13702400850417 /* ScreenData.swift */,
 				5E1242E02C221BFA0042B089 /* ContentView.swift */,
 				5E1242E22C221BFA0042B089 /* Item.swift */,
 				5EE807892C38D2500070D8E9 /* Onboarding */,
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFA2E7D2D13739B00850417 /* ScreenData.swift in Sources */,
 				5E11F66F2CF54EA5000E6DB9 /* AlpacaModels.swift in Sources */,
 				5EE8078F2C3A200A0070D8E9 /* Homepage.swift in Sources */,
 				5E1242E12C221BFA0042B089 /* ContentView.swift in Sources */,
@@ -656,6 +660,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.negbuna.Univestal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,6 +695,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.negbuna.Univestal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

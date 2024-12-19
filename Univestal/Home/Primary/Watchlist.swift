@@ -75,7 +75,7 @@ struct Watchlist: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: Search()) {
                         Image(systemName: "magnifyingglass")
                             .foregroundStyle(.blue)

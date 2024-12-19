@@ -128,3 +128,8 @@ struct UVButtons: View {
         .padding()
     }
 }
+
+#Preview {
+    UVButtons()
+        .environmentObject(AppData())
+}

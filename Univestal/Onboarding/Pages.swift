@@ -18,7 +18,7 @@ struct PageViews: View {
     }
     
     private var welcomeSec: some View {
-        GeometryReader { geometry in
+        VStack {
             ZStack {
                 ColorManager.bkgColor
                     .ignoresSafeArea()
@@ -28,10 +28,9 @@ struct PageViews: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .padding()
-                    .offset(y: showPrimary ? 0 : geometry.size.height / 2)
+                    .offset(y: showPrimary ? 0 : UIScreen.relativeHeight(50)) // 50% of screen height
                     .opacity(showPrimary ? 1 : 0)
-                    .frame(width: geometry.size.width, alignment: .center)
-                
+                    .frame(width: UIScreen.deviceWidth, alignment: .center)
             }
             .onAppear {
                 showContinue = false
@@ -175,12 +174,12 @@ struct PageViews: View {
 struct GlobeOverlay: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .background(alignment: .topLeading) {
+            .background(alignment: .trailing) {  // Changed to .trailing
                 Image(systemName: "globe")
                     .foregroundStyle(.primary)
                     .opacity(0.07)
-                    .font(.system(size: 800))
-                    .offset(x: 20, y: 2)
+                    .font(.system(size: UIScreen.main.bounds.width * 3))
+                    .offset(x: 2 * (UIScreen.main.bounds.width) , y: 200)
                     .ignoresSafeArea()
             }
     }
